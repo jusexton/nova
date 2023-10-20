@@ -1,4 +1,4 @@
-from nova.report import Report
+from nova.report.types import Report
 
 
 def format_duration(duration: float) -> str:
