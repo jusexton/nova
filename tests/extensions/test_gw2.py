@@ -1,7 +1,6 @@
 import pytest
 
-from nova.report import format_report, format_duration
-from nova.report.types import Encounter, Report, Player
+from nova.extensions.gw2 import format_report, format_duration, Report, Encounter, Player
 
 
 @pytest.mark.parametrize('duration,expected', [
