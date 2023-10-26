@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "nova"
 version = "0.1.0"
-description = ""
+description = "Self-host open source discord bot with a focus on providing quality core discord management tools along with configurable features from endless domains."
 authors = ["Justin Sexton <justinsexton.dev@gmail.com>"]
 readme = "README.md"
 
@@ -14,7 +14,7 @@ py-cord = "^2.4.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.2"
-pytest_mock="^3.12.0"
+pytest_mock = "^3.12.0"
 
 [build-system]
 requires = ["poetry-core"]
