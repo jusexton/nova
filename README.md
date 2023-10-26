@@ -1,18 +1,14 @@
 # Nova
 
-Discord bot with a focus on providing functionality around the Guild Wars 2 community.
+Self-host open source discord bot with a focus on providing quality core discord management tools along with
+configurable features from endless domains.
 
-## Commands
+## Getting Started
 
-### Core
+> Under construction
 
-`/ages`: Displays the severs age along with all its members.
+## Features
 
-![](assets/ages-image.png)
-
-### Guild Wars 2
-
-`/create-dps-report`: Creates a DPS report from provided arcdps log file.
-
-![](assets/dps-report-image.png)
+- [Core](docs/core.md)
+- [Guild Wars 2](docs/gw2.md)
 
