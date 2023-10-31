@@ -2,10 +2,11 @@ import logging
 
 import discord
 
-from nova import Nova
+from nova import Nova, config
 
 logging.basicConfig(level=logging.INFO)
 
+cfg = config.load()
 all_intents = discord.Intents.all()
-nova = Nova(all_intents)
-nova.run('token')
+nova = Nova(cfg, all_intents)
+nova.run(cfg.token)

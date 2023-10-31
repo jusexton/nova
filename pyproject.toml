@@ -11,6 +11,7 @@ aiohttp = "^3.8.6"
 aiodns = "^3.1.1"
 pydantic = "^2.4.2"
 py-cord = "^2.4.1"
+toml = "^0.10.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.2"

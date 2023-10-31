@@ -1,6 +1,12 @@
 import pytest
 
-from nova.extensions.gw2 import format_report, format_duration, Report, Encounter, Player
+from nova.extensions.gw2 import ReportFormatter
+from nova.extensions.gw2.types import Report, Encounter, Player
+
+
+@pytest.fixture
+def report_formatter() -> ReportFormatter:
+    return ReportFormatter()
 
 
 @pytest.mark.parametrize('duration,expected', [
@@ -10,11 +16,11 @@ from nova.extensions.gw2 import format_report, format_duration, Report, Encounte
     (241, '**4** minutes and **1** second')
 ])
 def test_format_duration(duration: float, expected: str):
-    actual = format_duration(duration)
+    actual = ReportFormatter.format_duration(duration)
     assert actual == expected
 
 
-def test_format_report():
+def test_format_report(report_formatter: ReportFormatter):
     report = Report(
         id='test-id',
         permalink='test-permalink',
@@ -38,7 +44,7 @@ def test_format_report():
         }
     )
 
-    actual_message = format_report(report)
+    actual_message = report_formatter.format(report)
     expected_message = (
         '## Report\n'
         'The full published report can be found here test-permalink.\n'

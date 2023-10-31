@@ -1,15 +1,16 @@
 from discord import Intents
 from discord.ext import commands
 
+from nova.config import NovaConfiguration
 from nova.core import NovaCore
-from nova.extensions.gw2 import GuildWars2
-from nova.extensions.poll import Poll
 
 
 class Nova(commands.Bot):
-    def __init__(self, intents: Intents):
+    def __init__(self, cfg: NovaConfiguration, intents: Intents):
         super().__init__(intents=intents)
+        self.cfg = cfg
 
         self.add_cog(NovaCore())
-        self.add_cog(GuildWars2())
-        self.add_cog(Poll())
+        for extension in cfg.extensions:
+            name = extension if isinstance(extension, str) else extension.name
+            self.load_extension(f"extensions.{name}")

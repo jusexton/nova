@@ -2,6 +2,8 @@ import discord
 from discord import ApplicationContext
 from discord.ext import commands
 
+from nova import Nova
+
 
 class Poll(commands.Cog):
     """
@@ -18,3 +20,8 @@ class Poll(commands.Cog):
                 discord.EmbedField()
             ]
         )
+
+
+def setup(bot: Nova):
+    cog = Poll()
+    bot.add_cog(cog)
