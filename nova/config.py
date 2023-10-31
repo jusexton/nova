@@ -3,7 +3,7 @@ from typing import Final
 
 import pydantic
 import toml
-from pydantic import Extra, ConfigDict
+from pydantic import ConfigDict
 
 NOVA_TOKEN: Final[str] = 'NOVA_TOKEN'
 NOVA_CONFIG_PATH: Final[str] = '/app/nova.toml'
