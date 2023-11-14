@@ -1,12 +1,10 @@
 import logging
 
-import discord
-
 from nova import Nova, config
 
 logging.basicConfig(level=logging.INFO)
 
 cfg = config.load()
-all_intents = discord.Intents.all()
-nova = Nova(cfg, all_intents)
+cfg.extensions.append('gw2')
+nova = Nova(cfg)
 nova.run(cfg.token)
